@@ -1,0 +1,4 @@
+#Reversing: install_vscode script (inspired by https://gist.github.com/pomber/db44098f3413d5213aec)
+sudo rm -f /usr/share/applications/vscode.desktop
+sudo rm -f /usr/local/bin/vscode
+sudo rm -rf /opt/vscode

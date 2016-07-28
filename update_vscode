@@ -1,0 +1,20 @@
+#From https://gist.github.com/pomber/db44098f3413d5213aec
+#160728: https://code.visualstudio.com/Docs/?dv=linux64
+#160728: Link to zip-file https://go.microsoft.com/fwlink/?LinkID=620884
+if [ -d /opt/vscode ]
+then
+    #There is a previous installation to update 
+    curl -L https://go.microsoft.com/fwlink/?LinkID=620884 > /tmp/vscode.zip
+    sudo unzip -qq /tmp/vscode.zip -d /tmp
+    echo Unzipped to /tmp/vscode*
+	sudo rm -rf /opt/vscode
+    echo Removed previous /opt/vscode
+    sudo cp -r /tmp/VSCode-linux-x64 /opt/vscode
+    echo Installed to /opt/vscode
+    #Keep presumingly existing links without attention
+    sudo rm -rf /tmp/VSCode-linux-x64
+    echo Deleted temporary /tmp/vscode*
+    sudo rm -f /tmp/vscode.zip
+else
+    echo run install_vcsode
+fi
